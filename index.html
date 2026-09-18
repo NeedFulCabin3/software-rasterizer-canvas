@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Software Rasterizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <canvas id="viewport"></canvas>
+
+    <div class="panel">
+      <h1>Rasterizer</h1>
+      <p class="sub">pure canvas 2d, no webgl</p>
+
+      <div class="group">
+        <label>Mesh</label>
+        <select id="meshSelect">
+          <option value="cube">Cube</option>
+          <option value="pyramid">Pyramid</option>
+          <option value="octahedron">Octahedron</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <label>Rotation speed X <span id="speedXVal">0.6</span></label>
+        <input type="range" id="speedX" min="0" max="3" step="0.1" value="0.6">
+      </div>
+
+      <div class="group">
+        <label>Rotation speed Y <span id="speedYVal">0.9</span></label>
+        <input type="range" id="speedY" min="0" max="3" step="0.1" value="0.9">
+      </div>
+
+      <div class="group">
+        <label>Camera distance <span id="zoomVal">4.5</span></label>
+        <input type="range" id="zoom" min="2.5" max="10" step="0.1" value="4.5">
+      </div>
+
+      <div class="group checks">
+        <label><input type="checkbox" id="autoRotate" checked> Auto rotate</label>
+        <label><input type="checkbox" id="solidFill" checked> Solid fill</label>
+        <label><input type="checkbox" id="wireframe" checked> Wireframe overlay</label>
+        <label><input type="checkbox" id="backfaceCull" checked> Back-face culling</label>
+      </div>
+
+      <div class="stats">
+        <div>FPS <span id="fps">0</span></div>
+        <div>Tris drawn <span id="triCount">0</span></div>
+      </div>
+
+      <p class="hint">drag on canvas to orbit manually</p>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
